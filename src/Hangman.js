@@ -6,8 +6,6 @@ import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-
-//imports 6imagaes from images to show the different arms
 import step0 from "./images/0.png";
 import step1 from "./images/1.png";
 import step2 from "./images/2.png";
@@ -40,7 +38,6 @@ class Hangman extends Component {
         return " _ ";
       }
     });
-    //   .map(letter) => (this.state.guessed.has(letter) ? letter : "_"));
   }
 
   handleGuess = (e) => {
@@ -79,11 +76,11 @@ class Hangman extends Component {
     let gameStat = this.generateButtons();
 
     if (isWinner) {
-      gameStat = "you won!";
+      gameStat = "You Won! Bet you can't do it again.";
     }
 
     if (gameOver) {
-      gameStat = "you lost!";
+      gameStat = "You Lost! You can't stop playing until you win.";
     }
 
     return (
@@ -175,7 +172,7 @@ class Hangman extends Component {
               <p>Wrong Guesses: {this.state.mistake} of {this.props.maxWrong}</p>
               <p>Guess the Programming Language</p>
               <p>{!gameOver ? this.guessedWord() : this.state.answer}</p>
-              <button>{gameStat}</button>
+              <h3>{gameStat}</h3>
               <br />
               <Button
                 className="reset-button"
