@@ -7,6 +7,9 @@ import Box from "@mui/material/Box";
 
 function Homepage() {
   const navigate = useNavigate();
+  const hangmanRoute = () => {
+    navigate("/hangman");
+  };
   const blackjackRoute = () => {
     navigate("/blackjack");
   };
@@ -41,7 +44,7 @@ function Homepage() {
           sx={{
             display: "flex",
             justifyContent: "center",
-            alignContent: 'center',
+            alignContent: "center",
             m: 1,
             p: 1,
             bgcolor: (theme) =>
@@ -58,7 +61,12 @@ function Homepage() {
         >
           <Typography component={"span"} align="center">
             <Stack direction="row" spacing={2}>
-              <Button variant="outlined" disabled>
+              <Button
+                id="play-hangman"
+                variant="contained"
+                size="large"
+                onClick={hangmanRoute}
+              >
                 Play Hangman
               </Button>
               <Button variant="outlined" disabled>
